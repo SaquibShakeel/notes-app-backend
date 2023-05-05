@@ -1,6 +1,5 @@
 const allowedOrigins = [
-    'http://localhost:3000',
-    'http://127.0.0.1:5173'
+    'https://notesapp-relx.onrender.com'
 ];
 
 module.exports = allowedOrigins;
