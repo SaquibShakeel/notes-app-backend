@@ -9,6 +9,7 @@ const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
 const connectDB = require('./config/dbConn');
 const mongoose = require('mongoose');
+var cron = require('node-cron');
 const PORT = process.env.PORT || 3500;
 
 connectDB();
@@ -18,6 +19,10 @@ app.use(logger);
 app.use(cors(corsOptions));
 
 app.use(express.json());
+
+cron.schedule("*/14 * * * *", () => {
+  console.log("running a task every 14 minute");
+});
 
 app.use(cookieParser());
 
